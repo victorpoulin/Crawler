@@ -1,7 +1,3 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
 package com.vpoulin.firstnamecrawler;
 
 import java.io.FileWriter;
@@ -23,10 +19,15 @@ public class NameList {
 
         BOY, GIRL, ANDROGYN
     };
+    //liste des prenoms féminins
     private Set<String> girlNames;
+    //liste des prenoms masculins
     private Set<String> boyNames;
+    //nom de fichier devant stocker les prénoms féminins
     private String girlFileName;
+    //nom de fichier devant stocker les prénoms masculins
     private String boyFileName;
+    
     private FileWriter girlWriter, boyWriter;
 
     public NameList(String girlFileName, String boyFileName) throws IOException {
@@ -36,6 +37,11 @@ public class NameList {
         this.boyFileName = boyFileName;
     }
 
+    /**
+     * Ajoute un prénom a la liste 
+     * @param type Le genre du prénom   
+     * @param name Le prénom
+     */
     public void addName(Type type, String name) {
         if (type == Type.BOY || type == Type.ANDROGYN) {
             //verification de l'unicité du prenom
@@ -50,6 +56,9 @@ public class NameList {
         }
     }
 
+    /**
+     * Ecrit les deux listes (prénoms masculins et féminins) dans deux fichiers différents
+     */
     public void writeResultsToFiles() {
         try {
             boyWriter = new FileWriter(boyFileName);
