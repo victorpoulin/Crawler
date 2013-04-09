@@ -12,6 +12,15 @@ import java.util.logging.Logger;
  */
 public class App 
 {
+    /**
+     * 
+     * @param args Argument0 : url a crawler , argument1 : chemin complet du fichier qui contiendra les prenoms féminins
+     * argument 2 : chemin complet du fichier qui contiendra les prenoms masculins
+     * argument 3 : chemin vers le dossier qui contiendra les pages mises en cache
+     * 
+     * exemple : http://www.meaning-of-names.com/english-names  C:\Users\vpoulin\girl.txt C:\Users\vpoulin\boy.txt C:\Users\vpoulin\temp
+     * @throws MalformedURLException 
+     */
     public static void main( String[] args ) throws MalformedURLException
     {
         if(args.length > 2)
